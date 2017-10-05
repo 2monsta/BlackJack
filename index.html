@@ -25,69 +25,89 @@
 				<div class="row">
 					<div class="col-sm-12 dealer-hand-wrapper">
 						<div class="col-sm-2 dealer-total">
-							<span>Dealer Total: <span>0</span></span>
+							<span>Dealer Total: <span id="dealer-number">0</span></span>
 						</div>
 						<div class="col-sm-10 dealer-cards">
 							<!-- This is 10 columns of dealer-hand-wrapper
 							we will divide the 10 columns into 6, 2 columns 1 for each card -->
-							<div class="card card-1 col-sm-2">
+							<div class="card card-1 col-sm-2 col-xs-2">
 								-
 							</div>
-							<div class="card card-2 col-sm-2">
+							<div class="card card-2 col-sm-2 col-xs-2">
 								-
 							</div>
-							<div class="card card-3 col-sm-2">
+							<div class="card card-3 col-sm-2 col-xs-2">
 								-
 							</div>
-							<div class="card card-4 col-sm-2">
+							<div class="card card-4 col-sm-2 col-xs-2">
 								-
 							</div>
-							<div class="card card-5 col-sm-2">
+							<div class="card card-5 col-sm-2 col-xs-2">
 								-
 							</div>
-							<div class="card card-6 col-sm-2">
+							<!-- <div class="card card-6 col-sm-2">
 								-
+							</div> -->
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="deck-wrapper">
+								<img class="deck-image" src="images/deck.png" alt="">
 							</div>
 						</div>
 					</div>
 					<div class="col-sm-12 player-hand-wrapper">
 						<div class="col-sm-2 player-total">
-							<span>Player Total: <span>0</span></span>
+							<span>Player Total: <span id="player-number">0</span></span>
 						</div>
 						<div class="col-sm-10 player-cards">
 							<!-- This is 10 columns of dealer-hand-wrapper
 							we will divide the 10 columns into 6, 2 columns 1 for each card -->
-							<div class="card card-1 col-sm-2">
+							<div class="card card-1 col-sm-2 col-xs-2">
 								-
 							</div>
-							<div class="card card-2 col-sm-2">
+							<div class="card card-2 col-sm-2 col-xs-2">
 								-
 							</div>
-							<div class="card card-3 col-sm-2">
+							<div class="card card-3 col-sm-2 col-xs-2">
 								-
 							</div>
-							<div class="card card-4 col-sm-2">
+							<div class="card card-4 col-sm-2 col-xs-2">
 								-
 							</div>
-							<div class="card card-5 col-sm-2">
+							<div class="card card-5 col-sm-2 col-xs-2">
 								-
 							</div>
-							<div class="card card-6 col-sm-2">
+							<!-- <div class="card card-6 col-sm-2">
 								-
+							</div> -->
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12 betting-wrapper">
+							<div class="betting-image col-sm-offset-3 col-sm-1 col-xs-offset-3 col-xs-2">
+								<img src="images/coin.png" alt="">
+							</div>
+							<div class="betting-number col-xs-3">
+								Your Bet: <span>0</span>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-sm-2 col-sm-offset-3">
-						<button class="btn btn-primary deal-button">Deal</button>
-					</div>
-					<div class="col-sm-2 col-sm-offset-1">
-						<button class="btn btn-danger hit-button">Hit</button>
-					</div>
-					<div class="col-sm-2 col-sm-offset-1">
-						<button class="btn btn-warning stand-button">Stand</button>
-					</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<button class="btn btn-primary deal-button btn-block">Deal</button>
+				</div>
+				<div class="col-sm-3">
+					<button class="btn btn-danger hit-button btn-block">Hit</button>
+				</div>
+				<div class="col-sm-3">
+					<button class="btn btn-warning stand-button btn-block">Stand</button>
+				</div>
+				<div class="col-sm-3">
+					<button class="btn btn-warning bet-button btn-block">Bet</button>
 				</div>
 			</div>
 		</div>

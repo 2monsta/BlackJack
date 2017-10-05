@@ -1,8 +1,8 @@
 $(document).ready(()=>{
-	//TODO: make sure K, Q , J all equal to 10
-	//TODO: make ace equal to 1 or 11 depends on bust
-	//TODO: make a delay on showing the dealer's card
-	//TODO: add a bet system or win systsem/ play for multiple hands
+	//TODO: make sure K, Q , J all equal to 10 CHECKED
+	//TODO: make ace equal to 1 or 11 depends on bust CHECKED
+	//TODO: make a delay on showing the dealer's card 
+	//TODO: add a bet system or win systsem/ play for multiple hands WORKING ON
 	//TODO: the game should stop when the game is over
 	//TODO: 
 	var playersHand = [];
@@ -111,9 +111,18 @@ $(document).ready(()=>{
 		for(let i = 0; i<hand.length; i++){
 			// copy onto this cardsvalue the entire string except for the last character
 			thisCardsValue = Number(hand[i].slice(0,-1));
+			if(thisCardsValue == 1){
+				if(handTotal > 10){
+					thisCardsValue = 1;
+				}else{
+					thisCardsValue = 11;
+				}
+			}else if(thisCardsValue>10){
+				thisCardsValue = 10;
+			}
 			handTotal +=thisCardsValue;
 		}
-		var classSelector = `.${who}-total`;
+		var classSelector = `#${who}-number`;
 		$(classSelector).html(handTotal);
 		return handTotal;
 	}

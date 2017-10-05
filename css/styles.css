@@ -1,16 +1,40 @@
 .the-table{
 	background-color: #277714;
 	border: 5px solid #dcdcdc;
+	/* border: 5px solid black; */
 	border-radius: 10px;
-	margin-top: 50px;
-	padding: 30px 0;
+	/* margin-top: 50px; */
+	padding: 10px 0;
+	border-radius: 0 0 50% 50%;
+	height: 100vh;
 }
 .card{
-	height: 120px;
-	background-color: white;
+	height: 100px;
+	background-color: #277714;
 	border: 1px solid #277714;
+	border-radius: 5px;
+	padding: 0px 5px 0 5px;
 }
 .card img{
 	width: 100%;
 	max-height: 100%;
+}
+.deck-image{
+	width: 7%;
+}
+.deck-wrapper{
+	margin-left: 40px;
+}
+/* .betting-image{
+	margin: auto;
+} */
+img{
+	width: 100%;
+	/* margin: auto; */
+}
+.dealer-hand-wrapper, .player-hand-wrapper{
+	padding-top: 40px;
+}
+.betting-wrapper{
+	margin-top: 30px;
 }
