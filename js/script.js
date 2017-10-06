@@ -1,8 +1,8 @@
 $(document).ready(()=>{
-	//TODO: make sure K, Q , J all equal to 10 CHECKED
-	//TODO: make ace equal to 1 or 11 depends on bust CHECKED
+	//TODO: add a bet system or win systsem/ play for multiple hands WORKING ON add money or subtrack money
+	//TODO: do a reset button or plays on after you win
 	//TODO: make a delay on showing the dealer's card 
-	//TODO: add a bet system or win systsem/ play for multiple hands WORKING ON
+	//TODO:
 	//TODO: the game should stop when the game is over
 	//TODO: 
 	var playersHand = [];
@@ -11,64 +11,12 @@ $(document).ready(()=>{
 	// make a full copy of the deck using slice, don't point at it
 	// var theDeck = freshDeck.slice();
 	var theDeck;
-	$(".deal-button").click(()=>{
-		theDeck = freshDeck.slice();
-		theDeck = shuffleDeck(theDeck);
-		playersHand = [];
-		dealersHand = [];
-		// console.log(theDeck);
-		// update the player and dealer hand ANGLE_instanced_arrays.apply.apply.apply.
+	var betAmount = 0;
+	var letsBet = false;
 
-		// 1st card to player hand
-		var firstCard = theDeck.shift();
-		playersHand.push(firstCard);
-		// 1st card to dealer hand
-		firstCard = theDeck.shift();
-		dealersHand.push(firstCard);
-		// 2nd card to player hand
-		firstCard = theDeck.shift();
-		playersHand.push(firstCard);
-		// 2nd card to dealer hand
-		firstCard = theDeck.shift();
-		dealersHand.push(firstCard);
-		console.log(dealersHand);
-		console.log(playersHand);
-		// placeCard image to the screen
-		placeCard("player", 1, playersHand[0]);
-		placeCard("player", 2, playersHand[1]);
-		placeCard("dealer", 1, dealersHand[0]);
-		placeCard("dealer", 2, dealersHand[1]);
-		
-		// calculate the total
-		calculateTotal(playersHand, 'player');
-		calculateTotal(dealersHand, "dealer");
-		
-	});
-
-	$(".hit-button").click(()=>{
-		// 1. get the top card
-		// 2. push to the players hand
-		// 3.put the card in the DOM
-		// 4. calculate the total
-
-		var topCard = theDeck.shift();
-		playersHand.push(topCard);
-		placeCard("player", playersHand.length, topCard /* playersHand[playersHand.length-1] */)
-		calculateTotal(playersHand, "player");
-
-	});
-
-	$(".stand-button").click(()=>{
-		var dealerTotal = calculateTotal(dealersHand, "dealer");
-		while(dealerTotal<17){
-			var topCard = theDeck.shift();
-			dealersHand.push(topCard);
-			placeCard("dealer", dealersHand.length, topCard);
-			dealerTotal = calculateTotal(dealersHand, "dealer");
-		}
-		checkWin();
-	});
 	
+
+
 	function createDeck(){
 		var newDeck = [];
 		// card = suit + value;o
@@ -149,4 +97,102 @@ $(document).ready(()=>{
 			console.log("TIE");
 		}
 	}
+
+	function bet(){
+		var betValue = Number($(".bet-amount").val());
+		var currentValue = Number($(".money").html());
+		if(!letsBet){
+			// continue;
+		}else{
+			betAmount += betValue;
+			myValue = currentValue - betValue;
+			$(".bet-pot").html(betAmount);
+			$(".bet-amount").val("");
+			$(".money").html(myValue);
+		}
+	}
+	$(".deal-button").click(()=>{
+		theDeck = freshDeck.slice();
+		theDeck = shuffleDeck(theDeck);
+		playersHand = [];
+		dealersHand = [];
+		// console.log(theDeck);
+		// update the player and dealer hand ANGLE_instanced_arrays.apply.apply.apply.
+
+		// 1st card to player hand
+		var firstCard = theDeck.shift();
+		playersHand.push(firstCard);
+		// 1st card to dealer hand
+		firstCard = theDeck.shift();
+		dealersHand.push(firstCard);
+		// 2nd card to player hand
+		firstCard = theDeck.shift();
+		playersHand.push(firstCard);
+		// 2nd card to dealer hand
+		firstCard = theDeck.shift();
+		dealersHand.push(firstCard);
+		console.log(dealersHand);
+		console.log(playersHand);
+		// placeCard image to the screen
+		placeCard("player", 1, playersHand[0]);
+		placeCard("player", 2, playersHand[1]);
+		placeCard("dealer", 1, dealersHand[0]);
+		placeCard("dealer", 2, dealersHand[1]);
+		
+		// calculate the total
+		calculateTotal(playersHand, 'player');
+		calculateTotal(dealersHand, "dealer");
+
+		// turns the bet button on
+		letsBet = true;
+		
+	});
+
+	$(".hit-button").click(()=>{
+		// 1. get the top card
+		// 2. push to the players hand
+		// 3.put the card in the DOM
+		// 4. calculate the total
+
+		var topCard = theDeck.shift();
+		playersHand.push(topCard);
+		placeCard("player", playersHand.length, topCard /* playersHand[playersHand.length-1] */)
+		calculateTotal(playersHand, "player");
+
+	});
+
+	$(".stand-button").click(()=>{
+		var dealerTotal = calculateTotal(dealersHand, "dealer");
+		while(dealerTotal<17){
+			var topCard = theDeck.shift();
+			dealersHand.push(topCard);
+			placeCard("dealer", dealersHand.length, topCard);
+			dealerTotal = calculateTotal(dealersHand, "dealer");
+		}
+		checkWin();
+	});
+
+	$(".bet-button").click(()=>{
+		// var betValue = Number($(".bet-amount").val());
+		// var currentValue = Number($(".money").html());
+		// if(!letsBet){
+		// 	// continue;
+		// }else{
+		// 	betAmount += betValue;
+		// 	myValue = currentValue - betValue;
+		// 	$(".bet-pot").html(betAmount);
+		// 	$(".bet-amount").val("");
+		// 	$(".money").html(myValue);
+		// }
+		// var betValue = Number($(".bet-amount").val());
+		// var currentValue = Number($(".money").html());
+		// betAmount += betValue;
+		// myValue = currentValue - betValue;
+		// $(".bet-pot").html(betAmount);
+		// $(".bet-amount").val("");
+		// $(".money").html(myValue);
+		bet();
+	});
+
+
 });

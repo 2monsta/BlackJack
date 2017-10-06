@@ -86,16 +86,23 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-12 betting-wrapper">
-							<div class="betting-image col-sm-offset-3 col-sm-1 col-xs-offset-3 col-xs-2">
+							<div class="betting-image">
 								<img src="images/coin.png" alt="">
 							</div>
-							<div class="betting-number col-xs-3">
-								Your Bet: <span>0</span>
+							<div class="betting-number text-center">
+								Your Bet: $<span class="bet-pot">0</span>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			<div class="row">
+					<div class="col-sm-2 col-xs-3">
+						<div class="current-money text-center">
+							You currently have $<span class="money">500</span>
+						</div>
+					</div>
+				</div>
 			<div class="row">
 				<div class="col-sm-3">
 					<button class="btn btn-primary deal-button btn-block">Deal</button>
@@ -107,7 +114,14 @@
 					<button class="btn btn-warning stand-button btn-block">Stand</button>
 				</div>
 				<div class="col-sm-3">
-					<button class="btn btn-warning bet-button btn-block">Bet</button>
+					<!-- <form action="" class="bet-form"> -->
+					<div class="col-sm-7 input-wrapper">
+						<input type="text" class="form-control bet-amount" placeholder="place your bet">
+					</div>
+					<div class="col-sm-5 input-wrapper">
+						<button class="btn btn-warning bet-button btn-block">Bet</button>
+					</div>
+					<!-- </form> -->
 				</div>
 			</div>
 		</div>

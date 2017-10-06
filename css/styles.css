@@ -1,3 +1,4 @@
+
 .the-table{
 	background-color: #277714;
 	border: 5px solid #dcdcdc;
@@ -6,7 +7,8 @@
 	/* margin-top: 50px; */
 	padding: 10px 0;
 	border-radius: 0 0 50% 50%;
-	height: 100vh;
+	/* height: 100vh; */
+	height: 500px;
 }
 .card{
 	height: 100px;
@@ -25,16 +27,24 @@
 .deck-wrapper{
 	margin-left: 40px;
 }
-/* .betting-image{
+.betting-image{
 	margin: auto;
-} */
+	width: 30px;
+}
 img{
 	width: 100%;
-	/* margin: auto; */
 }
 .dealer-hand-wrapper, .player-hand-wrapper{
 	padding-top: 40px;
 }
 .betting-wrapper{
 	margin-top: 30px;
+}
+.current-money{
+	background-color: peachpuff;
+	color: red;
+	margin-bottom: 10px;
+}
+.input-wrapper{
+	padding: 0;
 }
