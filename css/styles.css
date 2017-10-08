@@ -1,4 +1,7 @@
-
+.pers1000{
+	perspective: 1000px;
+	perspective-origin: 50% 10%;
+}
 .the-table{
 	background-color: #277714;
 	border: 5px solid #dcdcdc;
@@ -9,6 +12,8 @@
 	border-radius: 0 0 50% 50%;
 	/* height: 100vh; */
 	height: 500px;
+	transform: rotateX(60deg);
+}
 }
 .card{
 	height: 100px;
