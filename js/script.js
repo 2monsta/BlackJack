@@ -30,6 +30,30 @@ $(document).ready(()=>{
 		var classSelector = `.${who}-cards .card-${where}`;
 		$(classSelector).html(`<img src = "images/cards/${card}.png">`)
 	}
+	// hand is the array to total up and who is which players hand that we need to caluclate
+	function calculateTotal(hand, who){
+		var handTotal = 0;
+		// this part gets rid of the suits
+		var thisCardsValue = 0;
+		for(let i = 0; i<hand.length; i++){
+			// this cuts off the last character
+			thisCardsValue = Number(hand[i].slice(0,-1));
+			if(thisCardsValue == 1){
+				if(handTotal > 10){
+					thisCardsValue = 1;
+				}else{
+					thisCardsValue = 11;
+				}
+			}else if(thisCardsValue>10){
+				thisCardsValue = 10;
+			}
+			handTotal += thisCardsValue;
+		}
+		var classSelector = `.${who}-total`;
+		$(classSelector).html(handTotal);
+		return handTotal;
+	}
+
 	$(".deal-button").click(()=>{
 		// console.log("user clicked me");
 		playersHand = [];
@@ -46,6 +70,10 @@ $(document).ready(()=>{
 		placeCard("player", 2, playersHand[1]);
 		placeCard("dealer", 1, dealersHand[0]);
 		placeCard("dealer", 2, dealersHand[1]);
+
+
+		calculateTotal(playersHand, "player");
+		calculateTotal(dealersHand, "dealer");
 	});
 	$(".hit-button").click(()=>{
 		console.log("user clicked me");
