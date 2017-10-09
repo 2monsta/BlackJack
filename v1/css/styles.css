@@ -1,0 +1,55 @@
+.pers1000{
+	perspective: 1000px;
+	perspective-origin: 50% 10%;
+}
+.the-table{
+	background-color: #277714;
+	border: 5px solid #dcdcdc;
+	/* border: 5px solid black; */
+	border-radius: 10px;
+	/* margin-top: 50px; */
+	padding: 10px 0;
+	border-radius: 0 0 50% 50%;
+	/* height: 100vh; */
+	height: 500px;
+	transform: rotateX(60deg);
+}
+}
+.card{
+	height: 100px;
+	background-color: #277714;
+	border: 1px solid #277714;
+	border-radius: 5px;
+	padding: 0px 5px 0 5px;
+}
+.card img{
+	width: 100%;
+	max-height: 100%;
+}
+.deck-image{
+	width: 7%;
+}
+.deck-wrapper{
+	margin-left: 40px;
+}
+.betting-image{
+	margin: auto;
+	width: 30px;
+}
+img{
+	width: 100%;
+}
+.dealer-hand-wrapper, .player-hand-wrapper{
+	padding-top: 40px;
+}
+.betting-wrapper{
+	margin-top: 30px;
+}
+.current-money{
+	background-color: peachpuff;
+	color: red;
+	margin-bottom: 10px;
+}
+.input-wrapper{
+	padding: 0;
+}

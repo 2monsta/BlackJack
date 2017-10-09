@@ -3,125 +3,54 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Black Jack</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/styles.css">
 	<script src="js/jquery.min.js"></script>
 	<script src="js/script.js"></script>
-
+	<title>Document</title>
 </head>
 <body>
-	<!-- Layout...
-	1. create an element for our table
-	2. Make it green
-	3. give it a border(white)
-	4. create an element for the dealer's hand and player's hand
-	5. create an elelemen for the dealer's total and the player's total
-	6. create an element inside each hand for each card (max of 6)
-	7. make a deal, hit, and stand button -->
-	<div class="container pers1000">
+	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 the-table">
 				<div class="row">
-					<div class="col-sm-12 dealer-hand-wrapper">
-						<div class="col-sm-2 dealer-total">
-							<span>Dealer Total: <span id="dealer-number">0</span></span>
+					<div class="dealer-hand-wrapper col-sm-12">
+						<div class="col-sm-2">
+							Dealer Total: <span class="dealer-total">0</span>
 						</div>
 						<div class="col-sm-10 dealer-cards">
-							<!-- This is 10 columns of dealer-hand-wrapper
-							we will divide the 10 columns into 6, 2 columns 1 for each card -->
-							<div class="card card-1 col-sm-2 col-xs-2">
-								-
-							</div>
-							<div class="card card-2 col-sm-2 col-xs-2">
-								-
-							</div>
-							<div class="card card-3 col-sm-2 col-xs-2">
-								-
-							</div>
-							<div class="card card-4 col-sm-2 col-xs-2">
-								-
-							</div>
-							<div class="card card-5 col-sm-2 col-xs-2">
-								-
-							</div>
-							<!-- <div class="card card-6 col-sm-2">
-								-
-							</div> -->
+							<div class="card card-1 col-sm-2"><img src="images/deck.png" alt=""></div>
+							<div class="card card-2 col-sm-2"><img src="images/deck.png" alt=""></div>
+							<div class="card card-3 col-sm-2"><img src="images/deck.png" alt=""></div>
+							<div class="card card-4 col-sm-2"><img src="images/deck.png" alt=""></div>
+							<div class="card card-5 col-sm-2"><img src="images/deck.png" alt=""></div>
+							<div class="card card-6 col-sm-2"><img src="images/deck.png" alt=""></div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-sm-12">
-							<div class="deck-wrapper">
-								<img class="deck-image" src="images/deck.png" alt="">
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-12 player-hand-wrapper">
-						<div class="col-sm-2 player-total">
-							<span>Player Total: <span id="player-number">0</span></span>
+					<div class="player-hand-wrapper col-sm-12">
+						<div class="col-sm-2">
+							Player Total: <span class="player-total">0</span>
 						</div>
 						<div class="col-sm-10 player-cards">
-							<!-- This is 10 columns of dealer-hand-wrapper
-							we will divide the 10 columns into 6, 2 columns 1 for each card -->
-							<div class="card card-1 col-sm-2 col-xs-2">
-								-
-							</div>
-							<div class="card card-2 col-sm-2 col-xs-2">
-								-
-							</div>
-							<div class="card card-3 col-sm-2 col-xs-2">
-								-
-							</div>
-							<div class="card card-4 col-sm-2 col-xs-2">
-								-
-							</div>
-							<div class="card card-5 col-sm-2 col-xs-2">
-								-
-							</div>
-							<!-- <div class="card card-6 col-sm-2">
-								-
-							</div> -->
+							<div class="card card-1 col-sm-2"><img src="images/deck.png" alt=""></div>
+							<div class="card card-2 col-sm-2"><img src="images/deck.png" alt=""></div>
+							<div class="card card-3 col-sm-2"><img src="images/deck.png" alt=""></div>
+							<div class="card card-4 col-sm-2"><img src="images/deck.png" alt=""></div>
+							<div class="card card-5 col-sm-2"><img src="images/deck.png" alt=""></div>
+							<div class="card card-6 col-sm-2"><img src="images/deck.png" alt=""></div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-sm-12 betting-wrapper">
-							<div class="betting-image">
-								<img src="images/coin.png" alt="">
-							</div>
-							<div class="betting-number text-center">
-								Your Bet: $<span class="bet-pot">0</span>
-							</div>
+					<div class="the-buttons">
+						<div class="col-sm-2 col-sm-offset-3">
+							<button class="btn btn-primary deal-button">Deal</button>
+						</div>
+						<div class="col-sm-2 col-sm-offset-1">
+							<button class="btn btn-danger hit-button">Hit</button>
+						</div>
+						<div class="col-sm-2 col-sm-offset-1">
+							<button class="btn btn-success stand-button">Stand</button>
 						</div>
 					</div>
-				</div>
-			</div>
-			<div class="row">
-					<div class="col-sm-2 col-xs-3">
-						<div class="current-money text-center">
-							You currently have $<span class="money">500</span>
-						</div>
-					</div>
-				</div>
-			<div class="row">
-				<div class="col-sm-3">
-					<button class="btn btn-primary deal-button btn-block">Deal</button>
-				</div>
-				<div class="col-sm-3">
-					<button class="btn btn-danger hit-button btn-block">Hit</button>
-				</div>
-				<div class="col-sm-3">
-					<button class="btn btn-warning stand-button btn-block">Stand</button>
-				</div>
-				<div class="col-sm-3">
-					<!-- <form action="" class="bet-form"> -->
-					<div class="col-sm-7 input-wrapper">
-						<input type="text" class="form-control bet-amount" placeholder="place your bet">
-					</div>
-					<div class="col-sm-5 input-wrapper">
-						<button class="btn btn-warning bet-button btn-block">Bet</button>
-					</div>
-					<!-- </form> -->
 				</div>
 			</div>
 		</div>
